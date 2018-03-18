@@ -1,0 +1,59 @@
+{
+  "name": "tonymanero/manero",
+  "description": "A CLI-Tool to convert DI-config files to disco configurations",
+  "keywords" : ["disco", "php", "dependency injection","DI", "zend-expressive", "expressive"],
+  "type": "project",
+  "license": "MIT",
+  "authors": [{
+    "name": "Andreas Heigl",
+    "email": "andreas@heigl.org"
+  }],
+  "require": {
+    "php" : "^7.1",
+    "roave/security-advisories": "dev-master",
+    "symfony/console": "^4.0",
+    "zendframework/zend-config-aggregator": "^1.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Manero\\" : "src/"
+    }
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "ManeroTest\\" : "tests/"
+    }
+  },
+  "bin" : ["bin/manero"],
+  "config" : {
+    "sort-packages" : true
+  },
+  "extra": {
+    "phar-builder": {
+      "compression": "GZip",
+      "name": "junitdiff.phar",
+      "output-dir": "./build",
+      "entry-point": "./app/junitdiff",
+      "include-dev": false,
+      "include" : [
+        "app",
+        "src"
+      ],
+      "skip-shebang" : false
+    }
+  },
+  "scripts": {
+    "test": "phpunit --color --coverage-text --coverage-clover clover.xml --log-junit junitlogs/`git rev-parse HEAD`.log",
+    "buildphar" : [
+      "rm -rf vendor",
+      "composer install --no-dev --prefer-dist",
+      "curl -o createPhar -L `curl -s https://api.github.com/repos/MacFJA/PharBuilder/releases | grep browser_download_url | head -n 1 | cut -d '\"' -f 4`",
+      "chmod 755 createPhar",
+      "mkdir -p ./build",
+      "php -d phar.readonly=0 ./createPhar package composer.json"
+    ]
+  }
+}
