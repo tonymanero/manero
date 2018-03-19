@@ -20,8 +20,23 @@ class ConvertZendExpressiveCommand extends Command
     {
         $this->setName('convert:zend-expressive')
             ->setDescription('Convert Zend Expressive configuration to disco')
+            ->setHelp('
+This task will convert a ZendExpressive 3 configuration to a Trait 
+usable by Disco.
+
+To create the necessary JSON-File add the following line to the file 
+"config/container.php" within your Expresive-project:
+
+    file_put_contents(getcwd() . \'/config.json\', json_encode($config));
+
+Add that right before the "return"-line.
+
+It will provide you with a JSON-encoded DI-configuration that can then
+be read by `manero` like this:
+
+    php manero.phar <path/to/config.json>
+            ')
             ->addArgument('configurationFile', InputArgument::REQUIRED, 'The Configuration-File to convert')
-            ->addArgument('outputFile', InputArgument::REQUIRED, 'The path where the configuration shall be created at')
             ;
     }
 
@@ -30,7 +45,7 @@ class ConvertZendExpressiveCommand extends Command
         $configFile    = $input->getArgument('configurationFile');
         $configuration = json_decode(file_get_contents($configFile), true);
 
-        $outputFile = $input->getArgument('outputFile');
+        $outputFile = 'ManeroConfigTrait.php';
 
         $service = new ConvertZendExpressiveService(
             $configuration['dependencies'],
