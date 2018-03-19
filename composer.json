@@ -34,12 +34,12 @@
   "extra": {
     "phar-builder": {
       "compression": "GZip",
-      "name": "junitdiff.phar",
+      "name": "manero.phar",
       "output-dir": "./build",
-      "entry-point": "./app/junitdiff",
+      "entry-point": "./bin/manero",
       "include-dev": false,
       "include" : [
-        "app",
+        "bin",
         "src"
       ],
       "skip-shebang" : false
