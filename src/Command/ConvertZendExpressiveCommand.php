@@ -54,6 +54,7 @@ be read by `manero` like this:
 
         $service();
 
-        $output->writeln('done');
+        $output->writeln('Created file "ManeroConfigTrait.php');
+        $output->writeln('Copy that file to your Disco-Project, adapt the namespace and include it via "use"');
     }
 }
