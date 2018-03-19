@@ -29,7 +29,7 @@ class FactoryBeanCreator extends AbstractBeanCreator
             %indent% */
             %indent%public function get%classWithoutBackslashes%() : \\%class%
             %indent%{
-            %indent%    return (new \\%factory%())(BeanFactoryRegistry::getInstance()));
+            %indent%    return (new \\%factory%())(BeanFactoryRegistry::getInstance());
             %indent%}';
 
         $this->getWriter()->write($preAliasTemplate);

@@ -43,8 +43,10 @@ abstract class AbstractBeanCreator implements Createable
         $template = '
         %indent% *     @Alias({"name" = "%alias%"})';
         foreach ($this->aliases as $alias) {
-            $this->getWriter()->write(str_Replace('%alias%', $alias, $template));
+            $content[] = str_Replace('%alias%', $alias, $template);
+
         }
+        $this->getWriter()->write(implode(",", $content));
     }
 
     public function getWriter() : Writeable

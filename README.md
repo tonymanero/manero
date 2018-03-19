@@ -1,13 +1,14 @@
 # Manero
 
-Create a configuration for [Disco](https://github.com/bitExpert/disco) from a given DI-Configuration in array form.
+Create a configuration for [Disco](https://github.com/bitExpert/disco) from a
+JSON-Encoded version of your current DI-Configuration.
 
 ## Usage
 
 Download the latest PHAR-file from https://github.com/tonymanero/manero/releases and invoke it.
 
 ```bash
-php manero.phar convert:<container-implementation> config.php filename.php
+php manero.phar convert:<container-implementation> config.json filename.php
 ```
 
 This will create a trait `filename.php` from the container-implementations configuration `config.php`.
