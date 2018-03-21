@@ -1,7 +1,7 @@
 <?php
 /*
  * Copyright (c) Manero Contributors. All rights reserved.
- * 
+ *
  * Licensed under the MIT License. See LICENSE.md file in the
  * project root for full license information.
  */
@@ -20,7 +20,7 @@ use SplFileInfo;
 class ConvertZendExpressiveServiceTest extends TestCase
 {
 
-    public function test__construct()
+    public function testConstructor()
     {
         $trait = M::mock(TraitCreator::class);
 
@@ -75,7 +75,6 @@ class ConvertZendExpressiveServiceTest extends TestCase
         );
 
         $service();
-
     }
 
     public function testinvokeWithAlias()
@@ -93,6 +92,5 @@ class ConvertZendExpressiveServiceTest extends TestCase
         );
 
         $service();
-
     }
 }

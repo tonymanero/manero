@@ -1,7 +1,7 @@
 <?php
 /*
  * Copyright (c) Manero Contributors. All rights reserved.
- * 
+ *
  * Licensed under the MIT License. See LICENSE.md file in the
  * project root for full license information.
  */
@@ -19,7 +19,7 @@ class TraitCreatorTest extends TestCase
 
     public function setUp()
     {
-        $this->filename = tempnam(sys_get_temp_dir(),'test');
+        $this->filename = tempnam(sys_get_temp_dir(), 'test');
     }
 
     public function shutDown()
@@ -29,7 +29,7 @@ class TraitCreatorTest extends TestCase
         }
     }
 
-    public function test__construct()
+    public function testConstructor()
     {
         $trait = new TraitCreator($this->filename);
 
@@ -83,7 +83,6 @@ trait ManeroConfigTrait
         $trait->addCreator($creator);
         self::assertAttributeSame(['foo' => $creator], 'creators', $trait);
         $trait->create();
-
     }
 
     public function testAddCreator()
