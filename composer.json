@@ -57,9 +57,12 @@
     }
   },
   "scripts": {
-    "test": "phpunit --color --coverage-text --coverage-clover clover.xml --log-junit junitlogs/`git rev-parse HEAD`.log",
+    "test-junitdiff": "phpunit --color --coverage-text --coverage-clover clover.xml --log-junit junitlogs/`git rev-parse HEAD`.log",
     "buildphar" : "./createPhar.sh",
     "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
-    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
+    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools",
+    "cs-check": "./vendor/bin/phpcs --version && ./vendor/bin/phpcs",
+    "test": "phpunit",
+    "test-coverage": "phpunit --coverage-clover clover.xml"
   }
 }
