@@ -61,7 +61,7 @@
     "buildphar" : "./createPhar.sh",
     "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
     "post-update-cmd": "Tooly\\ScriptHandler::installPharTools",
-    "cs-check": "./vendor/bin/phpcs --version && ./vendor/bin/phpcs",
+    "cs-check": "./vendor/bin/phpcs.phar --version && ./vendor/bin/phpcs.phar",
     "test": "phpunit",
     "test-coverage": "phpunit --coverage-clover clover.xml"
   }

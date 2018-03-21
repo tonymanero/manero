@@ -30,7 +30,8 @@ class InvocableBeanCreator extends AbstractBeanCreator
             [
                 '%class%',
                 '%classWithoutBackslashes%',
-            ], [
+            ],
+            [
                 $this->getClass(),
                 str_replace('\\', '', $this->getClass()),
             ],

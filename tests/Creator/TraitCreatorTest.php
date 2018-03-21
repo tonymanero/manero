@@ -42,7 +42,8 @@ class TraitCreatorTest extends TestCase
         $trait = new TraitCreator($this->filename);
         self::assertEquals('', file_get_contents($this->filename));
         $trait->create();
-        self::assertEquals('<?php
+        self::assertEquals(
+            '<?php
 
 use bitExpert\Disco\BeanFactoryRegistry;
 use bitExpert\Disco\Annotations\Alias;
@@ -53,7 +54,7 @@ trait ManeroConfigTrait
 {
 }
 ',
-        file_get_contents($this->filename)
+            file_get_contents($this->filename)
         );
     }
 
