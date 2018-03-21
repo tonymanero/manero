@@ -3,6 +3,14 @@
 Create a configuration for [Disco](https://github.com/bitExpert/disco) from a
 JSON-Encoded version of your current DI-Configuration.
 
+[![Build Status](https://travis-ci.org/tonymanero/manero.svg?branch=master)](https://travis-ci.org/tonymanero/manero)
+[![Coverage Status](https://coveralls.io/repos/github/tonymanero/manero/badge.svg?branch=master)](https://coveralls.io/github/tonymanero/manero?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tonymanero/manero/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tonymanero/manero/?branch=master)
+
+![Github Releases](https://img.shields.io/github/downloads/tonymanero/manero/latest/total.svg)
+![PHP-Version](	https://img.shields.io/packagist/php-v/tonymanero/manero.svg)
+![License](https://img.shields.io/packagist/l/tonymanero/manero.svg)
+
 ## Usage
 
 Download the latest PHAR-file from https://github.com/tonymanero/manero/releases and invoke it.
