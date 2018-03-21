@@ -63,6 +63,11 @@
     "post-update-cmd": "Tooly\\ScriptHandler::installPharTools",
     "cs-check": "./vendor/bin/phpcs.phar --version && ./vendor/bin/phpcs.phar",
     "test": "phpunit",
-    "test-coverage": "phpunit --coverage-clover clover.xml"
+    "test-coverage": "phpunit --coverage-clover clover.xml",
+    "upload-coverage": [
+      "curl -o coveralls -L https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar",
+      "chmod 755 coveralls",
+      "./coveralls -v"
+    ]
   }
 }
