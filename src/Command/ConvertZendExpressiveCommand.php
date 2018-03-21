@@ -8,6 +8,7 @@
 
 namespace Manero\Command;
 
+use Manero\Creator\TraitCreator;
 use Manero\Service\ConvertZendExpressiveService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -49,7 +50,7 @@ be read by `manero` like this:
 
         $service = new ConvertZendExpressiveService(
             $configuration['dependencies'],
-            new \SplFileInfo(getcwd() . '/' . $outputFile)
+            new TraitCreator(getcwd() . '/' . $outputFile)
         );
 
         $service();

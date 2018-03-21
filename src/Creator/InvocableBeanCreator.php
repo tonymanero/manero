@@ -19,16 +19,21 @@ class InvocableBeanCreator extends AbstractBeanCreator
         $postAliasTemplate = '
             %indent% * }})
             %indent% */
-            %indent%public function get%class%() : %class%
+            %indent%public function get%classWithoutBackslashes%() : \%class%
             %indent%{
-            %indent%    return new %class%();
+            %indent%    return new \%class%();
             %indent%}';
 
         $this->getWriter()->write($preAliasTemplate);
         $this->writeAliases();
         $this->getWriter()->write(str_replace(
-            '%class%',
-            $this->getClass(),
+            [
+                '%class%',
+                '%classWithoutBackslashes%',
+            ], [
+                $this->getClass(),
+                str_replace('\\', '', $this->getClass()),
+            ],
             $postAliasTemplate
         ));
 

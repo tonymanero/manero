@@ -11,13 +11,12 @@ namespace Manero\Service;
 use Manero\Creator\FactoryBeanCreator;
 use Manero\Creator\InvocableBeanCreator;
 use Manero\Creator\TraitCreator;
-use SplFileInfo;
 
 class ConvertZendExpressiveService
 {
     private $dependencies;
 
-    public function __construct(array $dependencies, SplFileInfo $traitFile)
+    public function __construct(array $dependencies, TraitCreator $trait)
     {
         $this->dependencies = array_merge(
             [
@@ -28,7 +27,7 @@ class ConvertZendExpressiveService
             $dependencies
         );
 
-        $this->trait = new TraitCreator($traitFile->getPathname());
+        $this->trait = $trait;
     }
 
     public function __invoke()
