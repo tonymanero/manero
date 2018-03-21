@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Expressive Skeleton coding standard">
-    <description>Expressive Skeleton coding standard</description>
+<ruleset name="manero coding standard">
+    <description>manero coding standard</description>
 
     <!-- display progress -->
     <arg value="p"/>
@@ -15,9 +15,7 @@
         </properties>
     </rule>
 
-    <rule ref="PSR1.Methods.CamelCapsMethodName">
-        <exclude-pattern>*/src/Api/src/Entity/Usergroup.php</exclude-pattern>
-    </rule>
     <!-- Paths to check -->
     <file>src</file>
+    <file>tests/</file>
 </ruleset>

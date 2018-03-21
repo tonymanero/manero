@@ -14,8 +14,9 @@
     "symfony/console": "^4.0"
   },
   "require-dev": {
+    "mockery/mockery": "^1.0",
     "phpunit/phpunit": "^7.0",
-    "mockery/mockery": "^1.0"
+    "tm/tooly-composer-script": "^1.2"
   },
   "autoload" : {
     "psr-4" : {
@@ -43,10 +44,22 @@
         "src"
       ],
       "skip-shebang" : false
+    },
+    "tools": {
+      "phpcs": {
+        "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.3/phpcs.phar",
+        "sign-url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.2.3/phpcs.phar.asc"
+      },
+      "security-checker": {
+        "url": "http://get.sensiolabs.org/security-checker.phar",
+        "force-replace": true
+      }
     }
   },
   "scripts": {
     "test": "phpunit --color --coverage-text --coverage-clover clover.xml --log-junit junitlogs/`git rev-parse HEAD`.log",
-    "buildphar" : "./createPhar.sh"
+    "buildphar" : "./createPhar.sh",
+    "post-install-cmd": "Tooly\\ScriptHandler::installPharTools",
+    "post-update-cmd": "Tooly\\ScriptHandler::installPharTools"
   }
 }
