@@ -50,7 +50,7 @@ jobs:
       if: tag =~ ^[0-9]
       php: 7.2
       script:
-        - createPhar.sh
+        - composer buildphar
     - stage: deploy
       if: tag =~ ^[0-9]
       script: echo "Deploying to github"
