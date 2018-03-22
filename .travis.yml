@@ -9,8 +9,6 @@ php:
  - nightly
 
 env:
- - DEPS=lowest
- - DEPS=locked
  - DEPS=latest
 
 matrix:
