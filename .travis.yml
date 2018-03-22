@@ -35,6 +35,7 @@ jobs:
   include:
     - stage: check
       php: 7.2
+      env: DEPS=latest
       script:
         - composer cs-check
     - stage: test
