@@ -37,6 +37,10 @@ if (!isset($MANERO_COMPOSER_INSTALL)) {
 
 require $MANERO_COMPOSER_INSTALL;
 
+if (is_readable(getcwd() . '/vendor/autoload.php')) {
+    require getcwd() . '/vendor/autoload.php';
+}
+
 // import the Symfony Console Application
 use Symfony\Component\Console\Application;
 $app = new Application();
