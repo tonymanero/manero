@@ -35,7 +35,7 @@ Call it right within your Expressive-Apps home-folder like this:
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $configFile    = $input->getArgument('configurationFile');
+        $configFile = $input->getArgument('configurationFile');
 
         try {
             $configuration = require $configFile;
