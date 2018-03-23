@@ -13,13 +13,14 @@ JSON-Encoded version of your current DI-Configuration.
 
 ## Usage
 
-Download the latest PHAR-file from https://github.com/tonymanero/manero/releases and invoke it.
+Download the latest PHAR-file from https://github.com/tonymanero/manero/releases
+and invoke it within your applications working directory.
 
 ```bash
-php manero.phar convert:<container-implementation> config.json
+php manero.phar convert:<container-implementation> path/to/config.php
 ```
 
-This will create a trait `ManeroConfigTrait.php` from the container-implementations configuration `config.json`.
+This will create a trait `ManeroConfigTrait.php` from the container-implementations configuration.
 
 There will be some manual labour needed to finalize the configuration due to
 quirks in the way f.e. ZendExpressive configures it's DI.
