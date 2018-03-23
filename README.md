@@ -1,7 +1,7 @@
 # Manero
 
-Create a configuration for [Disco](https://github.com/bitExpert/disco) from a
-JSON-Encoded version of your current DI-Configuration.
+Create a configuration for [Disco](https://github.com/bitExpert/disco) from
+your current DI-Configuration.
 
 [![Build Status](https://travis-ci.org/tonymanero/manero.svg?branch=master)](https://travis-ci.org/tonymanero/manero)
 [![Coverage Status](https://coveralls.io/repos/github/tonymanero/manero/badge.svg?branch=master)](https://coveralls.io/github/tonymanero/manero?branch=master)
